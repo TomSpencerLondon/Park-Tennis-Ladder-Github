@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/challenge/process",
+      "handler": "challenge.process",
+      "config": {
+        "policies": []
+      }
+    },         
+    {
+      "method": "GET",
+      "path": "/challenge/test",
+      "handler": "challenge.test",
+      "config": {
+        "policies": []
+      }
+    },    
+    {
+      "method": "GET",
+      "path": "/challenge/:id",
+      "handler": "challenge.findOne",
+      "config": {
+        "policies": []
+      }
+    },      
+    {
+      "method": "POST",
+      "path": "/challenge",
+      "handler": "challenge.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/challenge/:id",
+      "handler": "challenge.update",
+      "config": {
+        "policies": []
+      }
+    }        
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/rank-histories",
+      "handler": "rank-history.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/rank-histories/count",
+      "handler": "rank-history.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/rank-histories/:id",
+      "handler": "rank-history.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/rank-histories",
+      "handler": "rank-history.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/rank-histories/:id",
+      "handler": "rank-history.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/rank-histories/:id",
+      "handler": "rank-history.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

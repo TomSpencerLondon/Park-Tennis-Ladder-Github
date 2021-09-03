@@ -1,0 +1,133 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users-permissions_user",
+  "info": {
+    "name": "user",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": false,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true,
+      "private": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "model": "role",
+      "via": "users",
+      "plugin": "users-permissions",
+      "configurable": false
+    },
+    "avatar": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "challenges": {
+      "collection": "match",
+      "via": "challenger"
+    },
+    "opponents": {
+      "collection": "match",
+      "via": "opponent"
+    },
+    "won_matches": {
+      "collection": "match",
+      "via": "winner"
+    },
+    "lost_matches": {
+      "collection": "match",
+      "via": "loser"
+    },
+    "ranks": {
+      "collection": "rank",
+      "via": "user"
+    },
+    "firstname": {
+      "type": "string",
+      "required": false
+    },
+    "lastname": {
+      "type": "string",
+      "required": false
+    },
+    "phone": {
+      "type": "string",
+      "private": true
+    },
+    "availability": {
+      "type": "text"
+    },
+    "away": {
+      "type": "boolean"
+    },
+    "rank_histories": {
+      "collection": "rank-history",
+      "via": "user"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "status_updated_to": {
+      "collection": "match",
+      "via": "status_updated_by"
+    },
+    "skill": {
+      "model": "skills",
+      "via": "users"
+    },
+    "ladders": {
+      "collection": "ladder",
+      "via": "users",
+      "dominant": true
+    }
+  }
+}

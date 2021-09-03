@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "matches",
+  "info": {
+    "name": "match",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "challenger": {
+      "via": "challenges",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "opponent": {
+      "via": "opponents",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Expired",
+        "Accepted",
+        "Declined",
+        "Cancelled",
+        "Played",
+        "Forfeited",
+        "Disputed"
+      ]
+    },
+    "ladder": {
+      "via": "matches",
+      "model": "ladder"
+    },
+    "winner": {
+      "via": "won_matches",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "loser": {
+      "via": "lost_matches",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "challenger_set_scores": {
+      "type": "json"
+    },
+    "opponent_set_scores": {
+      "type": "json"
+    },
+    "rank_histories": {
+      "collection": "rank-history",
+      "via": "match"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "status_updated_at": {
+      "type": "datetime"
+    },
+    "status_updated_by": {
+      "via": "status_updated_to",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

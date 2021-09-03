@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rank_histories",
+  "info": {
+    "name": "Rank History",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "match": {
+      "via": "rank_histories",
+      "model": "match"
+    },
+    "user": {
+      "via": "rank_histories",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "rank": {
+      "type": "integer"
+    }
+  }
+}

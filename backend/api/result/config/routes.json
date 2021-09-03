@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/result",
+      "handler": "result.index",
+      "config": {
+        "policies": []
+      }
+    },    
+    {
+      "method": "PUT",
+      "path": "/result/:id",
+      "handler": "result.update",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

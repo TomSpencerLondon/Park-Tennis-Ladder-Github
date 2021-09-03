@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ranks",
+  "info": {
+    "name": "Rank",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "ladder": {
+      "via": "ranks",
+      "model": "ladder"
+    },
+    "user": {
+      "via": "ranks",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "rank": {
+      "type": "integer"
+    }
+  }
+}

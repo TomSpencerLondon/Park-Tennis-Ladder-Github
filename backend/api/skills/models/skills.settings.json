@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skills",
+  "info": {
+    "name": "Skills"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "users": {
+      "via": "skill",
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}

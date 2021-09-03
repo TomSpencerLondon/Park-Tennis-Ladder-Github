@@ -1,0 +1,4 @@
+pm2 start npm --name "ptl_web" -- start
+pm2 start npm --name "ptl_api" -- start
+sudo systemctl restart nginx
+mysql  ptl < ptl_init.sql -uptl -pluSfTtnivMSFM7

@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ladders",
+  "info": {
+    "name": "ladder",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "matches": {
+      "collection": "match",
+      "via": "ladder"
+    },
+    "ranks": {
+      "collection": "rank",
+      "via": "ladder"
+    },
+    "challenge_range": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "default": 3
+    },
+    "one_challenge_limit": {
+      "type": "boolean"
+    },
+    "auto_lock_challenges": {
+      "type": "boolean",
+      "default": true
+    },
+    "auto_lock_duration": {
+      "type": "integer",
+      "default": 7
+    },
+    "downward_challenges": {
+      "type": "boolean",
+      "default": true
+    },
+    "deny_challenge_rank_change": {
+      "type": "boolean"
+    },
+    "auto_forfeit_challenge": {
+      "type": "boolean"
+    },
+    "auto_forfeit_challenge_thresold": {
+      "type": "integer",
+      "default": 2,
+      "min": 1
+    },
+    "auto_expire_challenges": {
+      "type": "boolean"
+    },
+    "auto_expire_challenge_threshold": {
+      "type": "integer",
+      "min": 0,
+      "default": 10
+    },
+    "auto_expire_challenge_penalty": {
+      "type": "integer",
+      "min": 1,
+      "default": 1
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "link_about": {
+      "type": "string"
+    },
+    "link_directions": {
+      "type": "string"
+    },
+    "link_bookings": {
+      "type": "string"
+    },
+    "link_coaching": {
+      "type": "string"
+    },
+    "link_shop": {
+      "type": "string"
+    },
+    "location": {
+      "model": "locations",
+      "via": "ladders"
+    },
+    "users": {
+      "via": "ladders",
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}
